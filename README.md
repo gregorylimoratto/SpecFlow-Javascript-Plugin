@@ -3,6 +3,28 @@ SpecFlow-Javascript-Plugin
 
 Plugin SpecFlow permettant de générer des tests Javascript à partir d'une syntaxe Gherkin
 
+## Utilisation
+
++ Compiler le plugin, copier les dll générés dans le dossier des plugins SpecFlow
++ Ajouter la configuration du plugin dans le App.config de la lib de test :
+```
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="specFlow" type="TechTalk.SpecFlow.Configuration.ConfigurationSectionHandler, TechTalk.SpecFlow" />
+  </configSections>
+  <specFlow>
+    <!-- For additional details on SpecFlow configuration options see http://go.specflow.org/doc-config -->
+    <plugins>
+      <add name="Javascript" type="Generator" path="../libs"/>
+    </plugins>
+  </specFlow>
+</configuration>
+```
++ Ajouter un fichier .feature
++ Sauvegarder...
++ Les tests générés gère les backrounds, scenario outline et examples du langage Gherkin.
+
 ## Dependences
 
 Ce plugin génère des tests basés sur le plugin Karma [karma-jasmine-cucumber](https://github.com/DealerDotCom/karma-jasmine-cucumber).
@@ -90,5 +112,3 @@ feature.js
 }())
 
 ```
-
-## Utilisation
