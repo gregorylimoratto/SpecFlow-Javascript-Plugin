@@ -41,8 +41,6 @@ configuration.service.js
     'use strict';
 
     var mainModule = angular.module('app', []);
-
-    /** Provider angular permettant de stocker la configuration au lancement de l'application */
     mainModule.provider("configuration", function () {
         var parameters = null;
 
@@ -56,14 +54,6 @@ configuration.service.js
         };
         
         function configuration() {
-
-            /**
-             * fourni la configuration de l'application
-             * (set au démarrage de l'appli)
-             *
-             * @returns {Object} parameters - Parametres de l'application
-             * @returns {string} parameters.baseUrl - Url de base de l'application
-             */
             this.getConfiguration = function () {
                 return parameters;
             };
