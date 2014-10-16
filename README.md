@@ -24,6 +24,9 @@ Plugin SpecFlow permettant de générer des tests Javascript à partir d'une syn
 + Ajouter un fichier .feature
 + Sauvegarder...
 + Les tests générés gère les backrounds, scenario outline et examples du langage Gherkin.
++ 2 fichiers sont générés : 
+  + *.feature.js -> contient les tests exprimer dans la syntaxe du plugin karma-jasmine-cucumber
+  + *.feature.generatedstep -> contient les implémentations des given / when / then. A copier / coller dans un vrai fichier js pour compléter les tests.
 
 ## Dependences
 
