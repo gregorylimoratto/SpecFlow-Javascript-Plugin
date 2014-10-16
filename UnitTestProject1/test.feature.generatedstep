@@ -1,0 +1,32 @@
+﻿(function(){
+	featureSteps('Example feature: As a user of cucumber.js\n'+
+'I want to have documentation on cucumber\n'+
+'So that I can concentrate on building awesome applications')
+	.given('I do truc', function() {
+		/* Set test logic here */
+	})
+	.then('Machin', function() {
+		/* Set test logic here */
+	})
+	.given('I am on the Cucumber.js GitHub repository', function() {
+		/* Set test logic here */
+	})
+	.given('there are users:', function(table /* json */) {
+		/* Set test logic here */
+	})
+	.when('I go to the README file', function() {
+		/* Set test logic here */
+	})
+	.then('I should see "(.*)" as the page title', function(p0/* String */) {
+		/* Set test logic here */
+	})
+	.given('there are (.*) cucumbers', function(p0/* String */) {
+		/* Set test logic here */
+	})
+	.when('I eat (.*) cucumbers', function(p0/* String */) {
+		/* Set test logic here */
+	})
+	.then('I should have (.*) cucumbers', function(p0/* String */) {
+		/* Set test logic here */
+	});
+})();

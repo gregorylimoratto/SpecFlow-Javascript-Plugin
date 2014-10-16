@@ -1,0 +1,16 @@
+# lib generated specflow plugin
+libs/*
+
+#nugets packages
+packages/*
+
+*/bin/*
+*/obj/*
+
+*.csproj*
+
+*.suo
+
+*.dll
+*.pdb
+*/TestResults
