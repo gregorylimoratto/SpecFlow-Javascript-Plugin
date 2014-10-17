@@ -26,7 +26,6 @@ namespace SpecFlow.JavaScript.Generator
 
         private void GenerateFeatureStep(Feature feature)
         {
-            List<string> stepsText = new List<string>();
             var textAnalyzer = new StepTextAnalyzer();
 
             if (feature.Background != null)
@@ -55,6 +54,7 @@ namespace SpecFlow.JavaScript.Generator
             if (!knownSteps.Contains(stepText))
             {
                 writer.AppendStep(step.ScenarioBlock, analyzedStr, step.TableArg != null);
+                knownSteps.Add(stepText);
             }
         }
 
