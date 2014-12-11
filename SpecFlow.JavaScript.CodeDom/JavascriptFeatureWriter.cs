@@ -13,7 +13,7 @@ namespace SpecFlow.JavaScript.CodeDom
 
         private const string ScenarioTemplate = "\n\t\t.scenario('{0}')";
 
-        private const string StepTemplate = "\n\t\t\t.{0}('{1}', {2})";
+        private const string StepTemplate = "\n\t\t\t.{0}('{1}'{2})";
 
         private StringBuilder featureText = new StringBuilder();
 
@@ -33,8 +33,16 @@ namespace SpecFlow.JavaScript.CodeDom
 
         public void AddStep(string keyword, string text,  IList<IDictionary<string, string>> tableArgs)
         {
-            string s = JsonConvert.SerializeObject(tableArgs);
-            featureText.AppendFormat(StepTemplate, keyword.ToLower(), CodeDomHelper.CleanString(text), s);
+            if (tableArgs.Any())
+            {
+                string s = JsonConvert.SerializeObject(tableArgs);
+                s = ", " + s;
+                featureText.AppendFormat(StepTemplate, keyword.ToLower(), CodeDomHelper.CleanString(text), s);
+            }
+            else
+            {
+                featureText.AppendFormat(StepTemplate, keyword.ToLower(), CodeDomHelper.CleanString(text), string.Empty);
+            }
         }
 
         public string GetFeatureText() {

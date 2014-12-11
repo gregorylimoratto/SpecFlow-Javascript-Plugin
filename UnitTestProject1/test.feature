@@ -14,7 +14,7 @@
 | everzet  | 123456   | everzet@knplabs.com |
 | fabpot   | 22@222   | fabpot@symfony.com  |
     When I go to the README file
-    Then I should see "Usage" as the page title
+    Then I should see "Usage" as the page title 
 
 Scenario Outline: controlling order
   Given there are <start> cucumbers

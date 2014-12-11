@@ -76,7 +76,7 @@ namespace Javascript.Generator.SpecflowPlugin
 
             JavascriptSpecGenerator specGenerator = new JavascriptSpecGenerator();
             string generatedSpecCode = specGenerator.Generate(feature);
-            var generatedTestFullPath = GetTestFullPath(featureFileInput) + ".generatedstep";
+            var generatedTestFullPath = GetTestFullPath(featureFileInput) + ".generatedspec";
 
             File.WriteAllText(generatedTestFullPath, generatedSpecCode, Encoding.UTF8);
 

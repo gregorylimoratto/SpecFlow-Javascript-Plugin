@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlow.JavaScript.CodeDom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlow.JavaScript.Generator", "SpecFlow.JavaScript.Generator\SpecFlow.JavaScript.Generator.csproj", "{49283016-185E-4B0D-8FA9-3BBA7BE3E0C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AF.SpecFlow.Javascript.UnitTest", "AF.SpecFlow.Javascript.UnitTest\AF.SpecFlow.Javascript.UnitTest.csproj", "{0BFEE813-6064-40DA-81A2-FAF61925DDC6}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{49283016-185E-4B0D-8FA9-3BBA7BE3E0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49283016-185E-4B0D-8FA9-3BBA7BE3E0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49283016-185E-4B0D-8FA9-3BBA7BE3E0C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BFEE813-6064-40DA-81A2-FAF61925DDC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BFEE813-6064-40DA-81A2-FAF61925DDC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BFEE813-6064-40DA-81A2-FAF61925DDC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BFEE813-6064-40DA-81A2-FAF61925DDC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
