@@ -61,7 +61,6 @@
     <None Include="test.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
     </None>
-    <None Include="test.feature.generatedstep" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

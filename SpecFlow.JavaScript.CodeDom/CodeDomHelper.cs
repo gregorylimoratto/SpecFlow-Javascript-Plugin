@@ -10,7 +10,7 @@ namespace SpecFlow.JavaScript.CodeDom
     {
         internal static string CleanString(string text)
         {
-            return text.Replace("'", "\\'").Replace(Environment.NewLine, "\\n'+" + Environment.NewLine + "'");
+            return text.Replace("'", "\\'").Replace("\r\n", "\n").Replace("\n", "\\n'+" + Environment.NewLine + "'");
         }
     }
 }
