@@ -4,6 +4,8 @@ libs/*
 #nugets packages
 packages/*
 
+node_modules/*
+
 */bin/*
 */obj/*
 
