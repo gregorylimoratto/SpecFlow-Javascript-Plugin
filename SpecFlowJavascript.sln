@@ -5,11 +5,15 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Javascript.Generator.SpecflowPlugin", "AF.SpecFlow.Javascript\Javascript.Generator.SpecflowPlugin.csproj", "{7F430368-B15E-46A9-9294-535B7BC21E93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{9F57DCA9-6D62-4DE9-AB3E-E035DE75FD3E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlow.JavaScript.CodeDom", "SpecFlow.JavaScript.CodeDom\SpecFlow.JavaScript.CodeDom.csproj", "{C7745CA1-20AC-44DC-88D6-020143F320E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlow.JavaScript.Generator", "SpecFlow.JavaScript.Generator\SpecFlow.JavaScript.Generator.csproj", "{49283016-185E-4B0D-8FA9-3BBA7BE3E0C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Javascript.Generator.SpecflowPlugin.UnitTest", "Javascript.Generator.SpecflowPlugin.UnitTest\Javascript.Generator.SpecflowPlugin.UnitTest.csproj", "{2EDCED0B-D659-4EFC-81D5-D148C218F39A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2EE9332D-8F41-4A62-9798-C1DA00023DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlow.Javascript.GeneratorSample", "SpecFlow.Javascript.GeneratorSample\SpecFlow.Javascript.GeneratorSample.csproj", "{CF77662D-D460-4C6C-A4C5-6BBDB356330A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +25,6 @@ Global
 		{7F430368-B15E-46A9-9294-535B7BC21E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F430368-B15E-46A9-9294-535B7BC21E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F430368-B15E-46A9-9294-535B7BC21E93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9F57DCA9-6D62-4DE9-AB3E-E035DE75FD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9F57DCA9-6D62-4DE9-AB3E-E035DE75FD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9F57DCA9-6D62-4DE9-AB3E-E035DE75FD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9F57DCA9-6D62-4DE9-AB3E-E035DE75FD3E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C7745CA1-20AC-44DC-88D6-020143F320E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C7745CA1-20AC-44DC-88D6-020143F320E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7745CA1-20AC-44DC-88D6-020143F320E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,8 +33,20 @@ Global
 		{49283016-185E-4B0D-8FA9-3BBA7BE3E0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49283016-185E-4B0D-8FA9-3BBA7BE3E0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49283016-185E-4B0D-8FA9-3BBA7BE3E0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EDCED0B-D659-4EFC-81D5-D148C218F39A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EDCED0B-D659-4EFC-81D5-D148C218F39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EDCED0B-D659-4EFC-81D5-D148C218F39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EDCED0B-D659-4EFC-81D5-D148C218F39A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF77662D-D460-4C6C-A4C5-6BBDB356330A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF77662D-D460-4C6C-A4C5-6BBDB356330A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF77662D-D460-4C6C-A4C5-6BBDB356330A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF77662D-D460-4C6C-A4C5-6BBDB356330A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2EDCED0B-D659-4EFC-81D5-D148C218F39A} = {2EE9332D-8F41-4A62-9798-C1DA00023DED}
+		{CF77662D-D460-4C6C-A4C5-6BBDB356330A} = {2EE9332D-8F41-4A62-9798-C1DA00023DED}
 	EndGlobalSection
 EndGlobal

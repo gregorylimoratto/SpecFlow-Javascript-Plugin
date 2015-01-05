@@ -10,9 +10,9 @@ namespace SpecFlow.JavaScript.CodeDom
 {
     public class JavascriptSpecWriter
     {
-        private const string FeatureSpecTemplate = "(function(){{\n\tfeatureSteps('{0}: {1}'){2};\n}})();";
+        private const string FeatureSpecTemplate = "(function(){{\r\n\tfeatureSteps('{0}: {1}'){2};\r\n}})();";
 
-        private const string StepSpecTemplate = "\n\t.{0}('{1}', function({2}) {{\n\t\t/* Set test logic here */\n\t}})";
+        private const string StepSpecTemplate = "\r\n\t.{0}('{1}', function({2}) {{\r\n\t\t/* Set test logic here */\r\n\t}})";
 
         private readonly string featureTitle;
 
@@ -45,7 +45,7 @@ namespace SpecFlow.JavaScript.CodeDom
 
         public string GetSpecText()
         {
-            return string.Format(FeatureSpecTemplate, CodeDomHelper.CleanString(featureTitle), CodeDomHelper.CleanString(featureDescription), specText.ToString()); ;
+            return string.Format(FeatureSpecTemplate, CodeDomHelper.ProtectRegexp(CodeDomHelper.CleanString(featureTitle)), CodeDomHelper.ProtectRegexp(CodeDomHelper.CleanString(featureDescription)), specText.ToString()); ;
         }
 
         private string GetMethodText(AnalyzedStepText analyzedStepText)
@@ -56,7 +56,7 @@ namespace SpecFlow.JavaScript.CodeDom
             {
                 if (i != 0)
                 {
-                    methodText.Append("(" + analyzedStepText.Parameters[i - 1].RegexPattern + ")");
+                    methodText.Append("(" + CodeDomHelper.ProtectRegexp(analyzedStepText.Parameters[i - 1].RegexPattern) + ")");
                 }
                 string clean = CodeDomHelper.CleanString(analyzedStepText.TextParts[i]);
                 methodText.Append(clean);

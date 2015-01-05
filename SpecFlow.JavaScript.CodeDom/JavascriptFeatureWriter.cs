@@ -9,11 +9,11 @@ namespace SpecFlow.JavaScript.CodeDom
 {
     public class JavascriptFeatureWriter
     {
-        private const string FeatureTemplate = "(function(){{\n\tfeature('{0}: {1}'){2}\n}})();";
+        private const string FeatureTemplate = "(function(){{\r\n\tfeature('{0}: {1}'){2}\r\n}})();";
 
-        private const string ScenarioTemplate = "\n\t\t.scenario('{0}')";
+        private const string ScenarioTemplate = "\r\n\t\t.scenario('{0}')";
 
-        private const string StepTemplate = "\n\t\t\t.{0}('{1}'{2})";
+        private const string StepTemplate = "\r\n\t\t\t.{0}('{1}'{2})";
 
         private StringBuilder featureText = new StringBuilder();
 

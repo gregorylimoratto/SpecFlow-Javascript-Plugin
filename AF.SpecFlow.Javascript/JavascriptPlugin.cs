@@ -61,25 +61,32 @@ namespace Javascript.Generator.SpecflowPlugin
 
         public TestGeneratorResult GenerateTestFile(FeatureFileInput featureFileInput, GenerationSettings settings)
         {
-            Feature feature;
-            SpecFlowLangParser parser = new SpecFlowLangParser(generatorConfiguration.FeatureLanguage);
-            using (var contentReader = featureFileInput.GetFeatureFileContentReader(projectSettings))
-            {
-                feature = parser.Parse(contentReader, featureFileInput.GetFullPath(projectSettings));
-            }
-
-            JavascriptFeatureGenerator featureGenerator = new JavascriptFeatureGenerator();
-            string generatedTestCode = featureGenerator.Generate(feature);
             var generatedFeatureFullPath = GetTestFullPath(featureFileInput) + ".js";
-
-            File.WriteAllText(generatedFeatureFullPath, generatedTestCode, Encoding.UTF8);
-
-            JavascriptSpecGenerator specGenerator = new JavascriptSpecGenerator();
-            string generatedSpecCode = specGenerator.Generate(feature);
             var generatedTestFullPath = GetTestFullPath(featureFileInput) + ".generatedspec";
 
-            File.WriteAllText(generatedTestFullPath, generatedSpecCode, Encoding.UTF8);
+            try
+            {
+                Feature feature;
+                SpecFlowLangParser parser = new SpecFlowLangParser(generatorConfiguration.FeatureLanguage);
+                using (var contentReader = featureFileInput.GetFeatureFileContentReader(projectSettings))
+                {
+                    feature = parser.Parse(contentReader, featureFileInput.GetFullPath(projectSettings));
+                }
 
+                JavascriptFeatureGenerator featureGenerator = new JavascriptFeatureGenerator();
+                string generatedTestCode = featureGenerator.Generate(feature);
+
+                File.WriteAllText(generatedFeatureFullPath, generatedTestCode, Encoding.UTF8);
+
+                JavascriptSpecGenerator specGenerator = new JavascriptSpecGenerator();
+                string generatedSpecCode = specGenerator.Generate(feature);
+
+                File.WriteAllText(generatedTestFullPath, generatedSpecCode, Encoding.UTF8);
+            }
+            catch (Exception ex)
+            {
+                File.WriteAllText(generatedTestFullPath, ex.Message, Encoding.UTF8);
+            }
             return new TestGeneratorResult(null, false); // CodeDomProvider utilisé par SpecFlow pour l'ext du fichier généré.
             // donc on ne génére pas de fichier mais directement avec File.WriteAllText ci dessus.
         }

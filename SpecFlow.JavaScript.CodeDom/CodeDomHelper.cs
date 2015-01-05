@@ -12,5 +12,10 @@ namespace SpecFlow.JavaScript.CodeDom
         {
             return text.Replace("'", "\\'").Replace("\r\n", "\n").Replace("\n", "\\n'+" + Environment.NewLine + "'");
         }
+
+        internal static string ProtectRegexp(string regexp)
+        {
+            return regexp.Replace("(", "\\\\(").Replace(")","\\\\)");
+        }
     }
 }
