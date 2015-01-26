@@ -56,12 +56,29 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AngularApp.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Include="AngularApp.feature.generatedspec.js" />
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="SpecFlowFeature1.feature">
+    <None Include="scrabble\scabble.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SpecFlowFeature1.feature.cs</LastGenOutput>
     </None>
+    <None Include="scrabble\scabble.feature.generatedspec.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AngularApp.feature.js" />
+    <Content Include="angularapp\angular-mock.js" />
+    <Content Include="angularapp\angular.min.js" />
+    <Content Include="angularapp\app.js" />
+    <Content Include="angularapp\testHelper.js" />
+    <Content Include="globalTest.js" />
+    <Content Include="scrabble\Lettres.txt" />
+    <Content Include="scrabble\ListeMots.txt" />
+    <None Include="scrabble\base.js" />
+    <Content Include="scrabble\scabble.feature.js" />
+    <Content Include="scrabble\Scrabble.js" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
