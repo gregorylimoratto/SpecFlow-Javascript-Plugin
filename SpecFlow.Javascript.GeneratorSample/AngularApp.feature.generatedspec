@@ -1,0 +1,12 @@
+﻿(function(){
+	featureSteps('AngularApp: Pour montrer l\'utilisation de specflow avec du JS et le fwk angular')
+	.given('I enter "(.*)" into input', function(p0/* String */) {
+		/* Set test logic here */
+	})
+	.when('I press validate', function() {
+		/* Set test logic here */
+	})
+	.then('the result stored must be "(.*)"', function(p0/* String */) {
+		/* Set test logic here */
+	});
+})();

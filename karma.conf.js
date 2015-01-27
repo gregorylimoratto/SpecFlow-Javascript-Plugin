@@ -15,7 +15,14 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'UnitTestProject1/**.js'
+	  'SpecFlow.Javascript.GeneratorSample/angularapp/angular.min.js',
+	  'SpecFlow.Javascript.GeneratorSample/angularapp/angular-mock.js',
+	  'SpecFlow.Javascript.GeneratorSample/angularapp/testHelper.js',
+	  'SpecFlow.Javascript.GeneratorSample/angularapp/app.js',
+	  'SpecFlow.Javascript.GeneratorSample/scrabble/*.js',
+      'SpecFlow.Javascript.GeneratorSample/**.js',
+	  {pattern: 'SpecFlow.Javascript.GeneratorSample/scrabble/Lettres.txt', included: false},
+	  {pattern: 'SpecFlow.Javascript.GeneratorSample/scrabble/ListeMots.txt', included: false}
     ],
 
 

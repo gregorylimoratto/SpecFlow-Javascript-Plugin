@@ -16,6 +16,20 @@ Scenario: Récupérer la meilleur combinaison de lettre avec un tirage défini
 	| mots  |
 	| BAC |
 
+Scenario: Récupérer les meilleurs combinaisons de lettre avec un tirage défini dans deux arbos differentes
+	Given Je dispose d'un chevalet avec les lettres "ABCDD"
+	And Le dictionnaire contient les mots 
+	| mots  |
+	| BA    |
+	| SOJDF |
+	| BAC   |
+	| BDD   |
+	When Je demande le mot le plus long
+	Then Le resultat doit être 
+	| mots  |
+	| BAC |
+	| BDD |
+
 
 Scenario: Récupérer la meilleur combinaison de lettre avec un tirage défini et avec plus de lettres
 	Given Je dispose d'un chevalet avec les lettres "TOCAABS"
@@ -78,3 +92,20 @@ Scenario: Récupérer la meilleur combinaison de lettre avec un tirage défini m
 	Then Le resultat doit être 
 	| mots  |
 	| BAGDAD |
+
+
+Scenario: Rechercher le mot le plus long dans un dictionnaire en fonction d'un chevalet avec des joker
+	Given Je dispose d'un fichier contenant le dictionnaire à l'url "/base/SpecFlow.Javascript.GeneratorSample/scrabble/ListeMots.txt"
+	And Je dispose d'un chevalet avec les lettres "TOCAABS##"
+	When Je lit le fichier
+	And Je demande le mot le plus long
+	Then Le resultat doit être
+	| mots    |
+	| ABACOST |
+	| ASSAUTS|
+	|CABOTAS| 
+	|CACABAS| 
+	|CACABAT|
+	|ENTUBEZ|
+	|TABASCO|
+	
