@@ -60,12 +60,20 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
     </None>
     <None Include="AngularApp.feature.generatedspec.js" />
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="scrabble\scabble.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
     </None>
     <None Include="scrabble\scabble.feature.generatedspec.js" />
+    <None Include="scrabble\SpecFlowFeature3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
+    <None Include="scrabble\SpecFlowFeature1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp.feature.js" />

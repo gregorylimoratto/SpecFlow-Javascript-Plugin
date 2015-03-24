@@ -7,8 +7,12 @@ using TechTalk.SpecFlow.Infrastructure;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("AF.SpecFlow.Javascript")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
+#if DEBUG
+[assembly: AssemblyConfiguration("Debug")]
+#else
+[assembly: AssemblyConfiguration("Release")]
+#endif
+
 [assembly: AssemblyCompany("Axa")]
 [assembly: AssemblyProduct("AF.SpecFlow.Javascript")]
 [assembly: AssemblyCopyright("Copyright © Axa 2014")]
@@ -33,5 +37,5 @@ using TechTalk.SpecFlow.Infrastructure;
 // Vous pouvez spécifier toutes les valeurs ou indiquer les numéros de build et de révision par défaut 
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyInformationalVersionAttribute("1.0.0.4")]
+[assembly: AssemblyDescription("Plugin Specflow permettant de générer les scénarios en javascript")]

@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratorHelper.cs" />
     <Compile Include="JavascriptFeatureGenerator.cs" />
     <Compile Include="JavascriptSpecGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

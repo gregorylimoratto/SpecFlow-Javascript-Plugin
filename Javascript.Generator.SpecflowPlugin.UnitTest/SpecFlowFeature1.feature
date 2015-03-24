@@ -1,6 +1,7 @@
 ﻿Feature: test
 avec des exemple(s)
 
+@ignore
 Scenario: faire un test
 Given je suis là
 When je vais là-bas

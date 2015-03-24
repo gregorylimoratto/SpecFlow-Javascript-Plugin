@@ -73,15 +73,18 @@ namespace Javascript.Generator.SpecflowPlugin
                     feature = parser.Parse(contentReader, featureFileInput.GetFullPath(projectSettings));
                 }
 
-                JavascriptFeatureGenerator featureGenerator = new JavascriptFeatureGenerator();
-                string generatedTestCode = featureGenerator.Generate(feature);
+                if (!GeneratorHelper.ShouldIgnore(feature.Tags))
+                {
+                    JavascriptFeatureGenerator featureGenerator = new JavascriptFeatureGenerator();
+                    string generatedTestCode = featureGenerator.Generate(feature);
 
-                File.WriteAllText(generatedFeatureFullPath, generatedTestCode, Encoding.UTF8);
+                    File.WriteAllText(generatedFeatureFullPath, generatedTestCode, Encoding.UTF8);
 
-                JavascriptSpecGenerator specGenerator = new JavascriptSpecGenerator();
-                string generatedSpecCode = specGenerator.Generate(feature);
+                    JavascriptSpecGenerator specGenerator = new JavascriptSpecGenerator();
+                    string generatedSpecCode = specGenerator.Generate(feature);
 
-                File.WriteAllText(generatedTestFullPath, generatedSpecCode, Encoding.UTF8);
+                    File.WriteAllText(generatedTestFullPath, generatedSpecCode, Encoding.UTF8);
+                }
             }
             catch (Exception ex)
             {

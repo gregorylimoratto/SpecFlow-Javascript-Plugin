@@ -17,9 +17,7 @@ namespace SpecFlow.JavaScript.Generator
         public string Generate(Feature feature)
         {
             writer = new JavascriptFeatureWriter(feature.Title, feature.Description);
-
             GenerateScenario(feature);
-
             return writer.GetFeatureText();
         }
 
@@ -27,18 +25,23 @@ namespace SpecFlow.JavaScript.Generator
         {
             foreach (Scenario scenario in feature.Scenarios)
             {
-                var parameters = ExtractScenarioOutlineParameters(scenario);
-
-                if (parameters != null)
+                if (!GeneratorHelper.ShouldIgnore(scenario.Tags))
                 {
-                    for (int i = 0; i < parameters.First().Value.Length; i++)
-                    {
-                        var testSetParameters = parameters.Select(x => new KeyValuePair<string,string>(x.Key, x.Value[i])).ToArray();
+                    var parameters = ExtractScenarioOutlineParameters(scenario);
 
-                        WriteScenario(feature, scenario, " (TestSet " + (i + 1) + ")", testSetParameters);
+                    if (parameters != null)
+                    {
+                        for (int i = 0; i < parameters.First().Value.Length; i++)
+                        {
+                            var testSetParameters = parameters.Select(x => new KeyValuePair<string, string>(x.Key, x.Value[i])).ToArray();
+
+                            WriteScenario(feature, scenario, " (TestSet " + (i + 1) + ")", testSetParameters);
+                        }
                     }
-                } else {
-                    WriteScenario(feature, scenario, string.Empty, null);
+                    else
+                    {
+                        WriteScenario(feature, scenario, string.Empty, null);
+                    }
                 }
             }
         }

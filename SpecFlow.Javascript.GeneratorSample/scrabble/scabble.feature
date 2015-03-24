@@ -48,7 +48,6 @@ Scenario: Récupérer la meilleur combinaison de lettre avec un tirage défini e
 	| CABOTAS |
 	| ABACOST |
 
-
 Scenario: Lire un dictionnaire stoqué dans un fichier
 	Given Je dispose d'un fichier contenant le dictionnaire à l'url "/base/SpecFlow.Javascript.GeneratorSample/scrabble/ListeMots.txt"
 	When Je lit le fichier

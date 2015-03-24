@@ -38,9 +38,12 @@ namespace SpecFlow.JavaScript.Generator
 
             foreach (Scenario scenario in feature.Scenarios)
             {
-                foreach (ScenarioStep step in scenario.Steps)
+                if (!GeneratorHelper.ShouldIgnore(scenario.Tags))
                 {
-                    WriteStep(textAnalyzer, step);
+                    foreach (ScenarioStep step in scenario.Steps)
+                    {
+                        WriteStep(textAnalyzer, step);
+                    }
                 }
             }
         }

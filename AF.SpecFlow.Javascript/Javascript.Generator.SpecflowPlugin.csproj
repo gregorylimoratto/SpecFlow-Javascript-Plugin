@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7F430368-B15E-46A9-9294-535B7BC21E93}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -56,9 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="app.config.install.xdt" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="package.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SpecFlow.JavaScript.Generator\SpecFlow.JavaScript.Generator.csproj">
@@ -69,7 +71,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetDir)*.dll" "$(SolutionDir)packages\SpecFlow.1.9.0\tools" /r /e /y
-xcopy "$(TargetDir)*.dll" $(SolutionDir)\libs /r /e /y</PostBuildEvent>
+xcopy "$(TargetDir)*.dll" $(SolutionDir)\libs /r /e /y
+"$(SolutionDir)\.nuget\nuget" pack "$(ProjectPath)" -OutputDirectory $(SolutionDir).nuget\$(ConfigurationName)</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
