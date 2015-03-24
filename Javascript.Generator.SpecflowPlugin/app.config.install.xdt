@@ -3,7 +3,7 @@
   <specFlow xdt:Transform="Remove"/>
   <specFlow xdt:Transform="Insert" >
     <plugins>
-		  <add name="Javascript" type="Generator" path="../packages/SpecFlow.JavaScript.Generator.1.0.0.1/lib/net451" />
+		  <add name="Javascript" type="Generator" path="../packages/SpecFlow.JavaScript.Generator.1.0.0.0/lib/net451" />
     </plugins>
   </specFlow>
 </configuration>
