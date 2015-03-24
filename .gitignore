@@ -10,7 +10,7 @@ node_modules/*
 */obj/*
 
 #*.csproj*
-
+*.nupkg
 *.suo
 
 *.dll
