@@ -1,0 +1,26 @@
+﻿(function(){
+	featureSteps('scabble: Dans le but de marquer le plus de points,\n'+
+'En tant que personne nul au scrabble,\n'+
+'Je souhaite qu\'on me donne la meilleur combinaison')
+	.given('Je dispose d\'un chevalet avec les lettres "(.*)"', function(p0/* String */) {
+		/* Set test logic here */
+	})
+	.given('Le dictionnaire contient les mots', function(table /* json */) {
+		/* Set test logic here */
+	})
+	.when('Je demande le mot le plus long', function() {
+		/* Set test logic here */
+	})
+	.then('Le resultat doit être', function(table /* json */) {
+		/* Set test logic here */
+	})
+	.given('Je dispose d\'(.*)\'url "(.*)"', function(p0/* String */,p1/* String */) {
+		/* Set test logic here */
+	})
+	.when('Je lit le fichier', function() {
+		/* Set test logic here */
+	})
+	.then('J\'ai stoqué "(.*)" mots', function(p0/* Int32 */) {
+		/* Set test logic here */
+	});
+})();
