@@ -7,7 +7,7 @@
     <authors>Grégory Limoratto</authors>
     <owners>Axa</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Plugin SpecFlow permettant la génération des scénario de tests en javascript</description>
+    <description>Plugin SpecFlow permettant la génération des scénarii de tests en javascript</description>
     <copyright>Copyright © Axa 2015</copyright>
     <dependencies>
       <dependency id="SpecFlow" version="1.9.0" />
